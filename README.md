@@ -1,6 +1,6 @@
 # Udemy - 100 days of code (Python)
 
-
+- 깃허브 이메일 테스트
 
 ## Day 1 ~ Day 100
 
@@ -10,11 +10,7 @@
 
 - [x] Day 18 - Turtle & the Graphical User Interface (GUI) [21/02/11]
 
-
-
 ## 간단한 메모
-
-
 
 ### Day 17
 
@@ -25,9 +21,9 @@
 
   ```python
   import requests
-  
+
   url = "https://opentdb.com/api.php?amount=10&type=boolean"
-  
+
   response = requests.get(url)
   data = response.json()
   results = data.get("results", [])
@@ -35,13 +31,11 @@
   for question in results:
       question["question"] = question["question"].replace("&quot;", "\"").replace("#039;", "\'")
       question_data.append(question)
-  
+
   ```
 
   API를 통해 넘어오는 문제 텍스트에서 큰 따옴표와 작은 따옴표가 특수코드 형태로 넘어와 자동으로 변환되진 않았는데, 이를 해결하기 위해 순환하며 replace 메서드를 사용하여 문자열을 바꿔주었다.
   나중에는 더 나은 방법을 찾을 수 있을 것 같기도 한데, 오늘은 replace로 처리한 것으로 마무리하려고 한다.
-
-
 
 ### Day 18
 
@@ -56,10 +50,10 @@
          def __init__(self):
              super().__init__()
              self.color_list = ["navy", "green", "orange red", "coral1", "peach puff", "cornsilk4", "DeepPink", "DarkViolet", "DeepSkyBlue"]
-     
+
          def random_color(self):
              self.color((random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
-     
+
          def random_walk(self, count, length):
              angle_list = [0, 90, 180, 270]
              for _ in range(count):
@@ -77,7 +71,7 @@
      class MyTurtle(turtle.Turtle):
          def set_random_color(self):
              self.color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-     
+
          def spiro_graph(self, size_of_gap):
              count = 360 / size_of_gap
              for _ in range(int(count)):

@@ -1,7 +1,5 @@
 # Udemy - 100 days of code (Python)
 
-- 깃허브 이메일 테스트
-
 ## Day 1 ~ Day 100
 
 - [x] Day 16 - Object Oriented Programming (OOP) [21/02/06]

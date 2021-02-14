@@ -1,5 +1,9 @@
 import turtle
 MOVE_INSTANCE = 20
+RIGHT = 0
+UP = 90
+LEFT = 180
+DOWN = 270
 
 
 class Snake:
@@ -22,3 +26,20 @@ class Snake:
             new_y = self.segments[idx - 1].ycor()
             self.segments[idx].goto(new_x, new_y)
         self.segments[0].forward(MOVE_INSTANCE)
+
+    def right(self):
+        if self.segments[0].heading() != LEFT:
+            self.segments[0].setheading(RIGHT)
+
+    def up(self):
+        if self.segments[0].heading() != DOWN:
+            self.segments[0].setheading(UP)
+
+    def left(self):
+        if self.segments[0].heading() != RIGHT:
+            self.segments[0].setheading(LEFT)
+        # self.segments[0].forward(MOVE_INSTANCE)
+
+    def down(self):
+        if self.segments[0].heading() != UP:
+            self.segments[0].setheading(DOWN)

@@ -13,12 +13,20 @@ snake = Snake()
 screen.update()
 is_game_on = True
 
+screen.listen()
+screen.onkey(snake.right, "Right")
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.down, "Down")
+
 while is_game_on:
     print("loop")
     screen.update()
-    time.sleep(0.2)
+    time.sleep(0.1)
 
     snake.move()
+
+
 
 
 

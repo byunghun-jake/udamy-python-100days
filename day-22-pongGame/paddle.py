@@ -1,39 +1,31 @@
-# TODO 2: Create and move a paddle
+# Create and move a paddle
 import turtle
 
 
-class Paddle:
-    def __init__(self, x_pos):
-        self.paddles = []
-        self.position = [-30, -10, -10, 30]
-        self.direction = 1
-        for i in range(4):
-            new_t = turtle.Turtle("square")
-            new_t.speed("fastest")
-            new_t.penup()
-            new_t.color("white")
-            new_t.setheading(90)
-            # position = (x_pos, -20*i)
-            new_t.goto(x_pos, self.position[i])
-            self.paddles.append(new_t)
-        self.head = self.paddles[0]
-        self.paddles[0].color("red")
+class Paddle(turtle.Turtle):
+    def __init__(self, position):
+        super().__init__()
+        self.penup()
+        self.speed("fastest")
+        self.color("white")
+        self.goto(position)
+        self.shape("square")
+        self.shapesize(stretch_wid=5, stretch_len=1)
 
     def move(self):
-        # y_distance = self.direction * 20
-        for i in range(len(self.paddles)-1, 0, -1):
-            self.paddles[i].goto(self.paddles[i-1].xcor(), self.paddles[i-1].ycor())
-        self.head.forward(20)
+        # self.forward(20)
+        pass
 
     def change_direction(self):
-        self.head.setheading(-self.head.heading())
+        self.setheading(-self.heading())
 
-    # def game_start(self):
+    def go_up(self):
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
 
-
-
-
-
+    def go_down(self):
+        new_y = self.ycor() - 20
+        self.goto(self.xcor(), new_y)
 
 
 
